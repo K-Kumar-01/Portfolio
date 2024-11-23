@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
@@ -18,9 +17,6 @@ function App() {
         <AnimatedSection>
           <About />
         </AnimatedSection>
-        {/* <AnimatedSection>
-          <Experience />
-        </AnimatedSection> */}
         <Timeline />
         <AnimatedSection>
           <Projects />
