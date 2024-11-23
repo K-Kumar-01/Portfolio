@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased dark:bg-black dark:text-white;
+  }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-400 dark:bg-gray-700;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-600;
+}
+
+/* Smooth section transitions */
+section {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Skills Grid Layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    "web frontend backend database"
+    ". data code .";
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.skill-card {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.skill-web {
+  grid-area: web;
+}
+
+.skill-frontend {
+  grid-area: frontend;
+}
+
+.skill-backend {
+  grid-area: backend;
+}
+
+.skill-database {
+  grid-area: database;
+}
+
+.skill-data {
+  grid-area: data;
+}
+
+.skill-code {
+  grid-area: code;
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "web frontend backend"
+      "database data code";
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "web frontend"
+      "backend database"
+      "data code";
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "web"
+      "frontend"
+      "backend"
+      "database"
+      "data"
+      "code";
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+}
